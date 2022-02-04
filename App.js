@@ -8,8 +8,8 @@ app.use(express.json());
 const animeController = require('./controllers/animeController');
 app.use('/anime', animeController);
 
-const reviewsController = require('./controllers/reviewsController');
-app.use('/reviews/', reviewsController);
+// const reviewsController = require('./controllers/reviewsController');
+// app.use('/reviews/', reviewsController);
 
 app.get('/', (req, res) => {
     res.status(200).send('Welcome to our PostgreSQL lesson!')

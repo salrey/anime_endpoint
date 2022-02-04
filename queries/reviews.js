@@ -1,8 +1,9 @@
+const anime = require('../controllers/animeController');
 const db = require('../db/dbConfig');
 
-const getAllReviews = async () => {
+const getAllReviews = async (id) => {
     try {
-        const reviews = await db.any('SELECT * FROM reviews');
+        const reviews = await db.any('SELECT * FROM reviews WHERE anime_id=$1', id);
         return reviews;
     } catch (err) {
         return err
